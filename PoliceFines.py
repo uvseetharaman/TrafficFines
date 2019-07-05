@@ -1,8 +1,9 @@
 class PoliceFines:
 
-
     def initializeHash(self):
         print("initializeHash")
+        self.hashTable = {}
+        return {}
 
     def insertHash(driverhash, lic):
         print("insertHash")
@@ -18,7 +19,6 @@ class PoliceFines:
 
     def reorderByFineAmount(policeRoot):
         print("reorderByFineAmount")
-
 
     def printBonusPolicemen(policeRoot):
         print("printBonusPolicement")
