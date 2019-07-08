@@ -5,11 +5,20 @@ class PoliceFines:
         self.hashTable = {}
         return {}
 
-    def insertHash(driverhash, lic):
+    def insertHash(self, driverhash : dict, lic):
         print("insertHash")
+        if lic in driverhash:
+            driverhash[lic] = driverhash[lic] + 1
+        else:
+            driverhash[lic] = 1
 
-    def printViolators(driverhash):
+    def printViolators(self, driverhash):
         print("printViolators")
+        f = open("violators.txt","w")
+        for i in driverhash:
+            if driverhash[i]>=3:
+                f.write(i + ", " + str(driverhash[i]))
+        f.close()
 
     def destroyHash(driverhash):
         print("destroyHash")

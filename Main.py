@@ -9,16 +9,6 @@ class PoliceNode:
         self.left = None
         self.right = None
 
-#not needed
-def putHashTable(licenseNumber, fineAmount, hashTable):
-    if licenseNumber in hashTable:
-        hashTable[licenseNumber] = hashTable[licenseNumber] + fineAmount
-    else:
-        hashTable[licenseNumber] = fineAmount
-
-    print(hashTable[licenseNumber])
-
-
 
 if __name__ == '__main__':
     print("start")
@@ -38,10 +28,11 @@ if __name__ == '__main__':
             raise Exception("expecting police id, license number and fine amount in each row")
         policeId = splits[0].strip()
         licenseNumber = splits[1].strip()
-        fineAmount  =int(splits[2].strip())
-        putHashTable(licenseNumber,fineAmount, hashTable)
+        fineAmount =int(splits[2].strip())
 
-
+        pf.insertHash(hashTable, licenseNumber)
+    f.close()
+    pf.printViolators(hashTable);
 
 
 
